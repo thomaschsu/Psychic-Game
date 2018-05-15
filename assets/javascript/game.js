@@ -34,6 +34,7 @@ document.onkeyup = function (event) {
 
     else if (guesses == 0) {
         losses++;
+        console.log(losses);
     }
 }
 
