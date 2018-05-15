@@ -1,18 +1,42 @@
+// Variables
 var letters =
 ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-// Empty array for guessed letters
 var guessedLetters = [];
-
 var wins = 0;
 var losses = 0;
-var guesses = 9;
+var guessesLeft = 9;
+
+// Functions that updates wins, losses, guessesleft
+function updateWins() {
+    document.querySelector("#wins").innerHTML = "Wins: " + wins;
+}
+
+function updateLosses() {
+    document.querySelector("#losses").innerHTML = "Losses: " + losses;
+}
+
+function updateGuessesLeft() {
+    document.querySelector("#guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+}
+
+function updateGuessedLetters() {
+    document.querySelector("#guessedLetters").innerHTML = "You guessed: " + guessedLetters;
+}
+
+
+renderLetter()
+updateWins();
+updateLosses();
+updateGuessesLeft();
+updateGuessedLetters();
 
 // Computer chooses random letter
-var compRand = letters[Math.floor(Math.random() * letters.length)];
-console.log(compRand);
+function renderLetter() {
+    var compRand = letters[Math.floor(Math.random() * letters.length)];
+    console.log(compRand);
 
 // Player chooses random letter
-window.onload = document.onkeyup = function (event) {
+window.onload = document.onkeyup = function(event) {
     var wins = 0;
     var playRand = event.key;
     console.log(playRand);
@@ -26,19 +50,19 @@ window.onload = document.onkeyup = function (event) {
     (playRand === 'z')) {
 
     if (compRand != playRand) {
-        (guesses-- && guessedLetters.push(playRand));
-        console.log(guesses);
+        (guessesLeft-- && guessedLetters.push(playRand));
+        updateGuessesLeft();
+        console.log(guessesLeft);
     }
 
 // If letter right, mark as a win and restart
     if (compRand == playRand) {
         wins++;
-        console.log(wins);
-        location.reload();
+        updateWins();
     }
 
 // If player exhausts all guesses, mark as a loss and restart
-    if (guesses == 0) {
+    if (guessesLeft == 0) {
         losses++;
         console.log(losses);
     }
@@ -46,11 +70,12 @@ window.onload = document.onkeyup = function (event) {
 
 }
 
-    var html =
-    "<p>Wins: " + wins + "</p>" +
-    "<p>Losses: " + losses + "</p>" +
-    "<p>Guesses left: " + guesses + "</p>" +
-    "<p>Your Guesses so far: " + guessedLetters + " " + "</p>";
-    document.querySelector("#game").innerHTML = html;
+    // var html =
+    // "<p>Wins: " + wins + "</p>" +
+    // "<p>Losses: " + losses + "</p>" +
+    // "<p>Guesses left: " + guesses + "</p>" +
+    // "<p>Your Guesses so far: " + guessedLetters + " " + "</p>";
+    // document.querySelector("#game").innerHTML = html;
 
+}
 };
