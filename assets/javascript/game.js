@@ -15,6 +15,7 @@ console.log(compRand);
 
 // Player chooses random letter
 document.onkeyup = function (event) {
+    var wins = 0;
     var playRand = event.key;
     console.log(playRand);
 
@@ -26,9 +27,13 @@ document.onkeyup = function (event) {
 
 // If letter right, mark as a win and restart
     if (compRand === playRand) {
-        wins++
+        wins++;
         console.log(wins);
     }
-}
-document.getElementById("game").innerHTML = "Wins: " + wins + "<br> Losses: " + losses + "<br> Guesses Left: " + guesses;
-document.getElementById("guesses").innerHTML = "Your guesses so far: " + guessedLetters;
+    var html =
+        "<p>Wins: " + wins + "</p>" +
+        "<p>Losses: " + losses + "</p>" +
+        "<p>Guesses left: " + guesses + "</p>" +
+        "<p>Your guesses so far: " + guessedLetters + "</p>";
+        document.querySelector("#game").innerHTML = html;
+};
