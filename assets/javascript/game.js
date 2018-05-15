@@ -1,4 +1,3 @@
-// If letter wrong, mark down letter as previously guessed
 // If letter right, mark as a win and restart
 // If player exhausts all guesses, mark as a loss and restart
 
@@ -7,6 +6,9 @@ var losses = 0;
 var guesses = 9;
 var letters =
 ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+// Empty array for guessed letters
+var guessedLetters = [];
+
 // Computer chooses random letter
 var compRand = letters[Math.floor(Math.random() * letters.length)];
 console.log(compRand);
@@ -18,7 +20,7 @@ document.onkeyup = function (event) {
 
 // If letter is wrong, mark down letter as previously guessed
     if (compRand != playRand) {
-        guesses--
+        (guesses-- && guessedLetters.push(playRand));
         console.log(guesses);
     }
 
@@ -28,3 +30,5 @@ document.onkeyup = function (event) {
         console.log(wins);
     }
 }
+document.getElementById("game").innerHTML = "Wins: " + wins + "<br> Losses: " + losses + "<br> Guesses Left: " + guesses;
+document.getElementById("guesses").innerHTML = "Your guesses so far: " + guessedLetters;
