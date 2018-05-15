@@ -1,4 +1,3 @@
-// If player exhausts all guesses, mark as a loss and restart
 var letters =
 ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 // Empty array for guessed letters
@@ -38,10 +37,13 @@ window.onload = document.onkeyup = function (event) {
         location.reload();
     }
 
+// If player exhausts all guesses, mark as a loss and restart
     if (guesses == 0) {
         losses++;
         console.log(losses);
     }
+
+
 }
 
     var html =
