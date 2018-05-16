@@ -7,14 +7,16 @@
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
    <body>
-      <h1 class="text-center jumbotron">The Psychic Game</h1>
-      <p class="text-center">Press any letter from A-Z to get started. Guess the letter the computer is thinking of!</p>
-      <div id="message"></div>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">The Psychic Game</span>
+    </nav>
+      <p class="text-center text-white">Press any letter from A-Z to get started. Guess the letter the computer is thinking of!</p>
+      <div id="message" class="text-center"></div>
       <br>
-      <div class="container bg-white">
-      <div id="wins"></div>
-      <div id="losses"></div>
-      <div id="guessesLeft"></div>
+      <div class="container">
+      <div id="wins" class="text-center"></div>
+      <div id="losses" class="text-center"></div>
+      <div id="guessesLeft" class="text-center"></div>
       <div id="guessedLetters"></div>
     </div>
       <script src="assets/javascript/game.js"></script>
