@@ -19,7 +19,7 @@ function updateGuessesLeft() {
 }
 
 function updateGuessedLetters() {
-    document.querySelector("#guessedLetters").innerHTML = "Your guesses so far: " + guessedLetters + " ";
+    document.querySelector("#guessedLetters").innerHTML = "Your guesses so far: " + guessedLetters.join(', ');
 }
 
 // Function for restarting the game
@@ -40,12 +40,10 @@ updateGuessedLetters();
 // Computer chooses random letter
 function renderLetter() {
     var compRand = letters[Math.floor(Math.random() * letters.length)];
-    console.log(compRand);
 
     // Player chooses random letter
     document.onkeyup = function(event) {
         var playRand = event.key.toLowerCase();
-        console.log(playRand);
 
         // If player pushs a-z, game starts
         if ((playRand === 'a') || (playRand === 'b') || (playRand === 'c') || (playRand === 'd') || (playRand === 'e') ||
