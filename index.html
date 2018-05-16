@@ -3,22 +3,30 @@
    <head>
       <meta charset="UTF-8">
       <title>Psychic Game</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
+   </head>
    <body>
-    <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">The Psychic Game</span>
-    </nav>
-      <p class="text-center text-white">Press any letter from A-Z to get started. Guess the letter the computer is thinking of!</p>
-      <div id="message" class="text-center"></div>
-      <br>
-      <div class="container">
-      <div id="wins" class="text-center"></div>
-      <div id="losses" class="text-center"></div>
-      <div id="guessesLeft" class="text-center"></div>
-      <div id="guessedLetters"></div>
-    </div>
+      <nav class="navbar sticky-top navbar-light border-bottom border-light">
+         <div class="container">
+            <span class="navbar-brand mb-0 h1 text-white">The Psychic Game</span>
+         </div>
+      </nav>
+      <div class="footer-fix my-3">
+         <div class="container bg-light p-5 border">
+            <h4 class="text-center font-weight-bold">Press any letter from A-Z to get started. Guess the letter the computer is thinking of.</h4>
+            <br>
+            <div id="wins" class="text-center"></div>
+            <div id="losses" class="text-center"></div>
+            <div id="guessesLeft" class="text-center"></div>
+            <div id="guessedLetters"></div>
+         </div>
+      </div>
+      <footer class="footer bg-dark py-5 mt-5">
+         <div class="container text-center">
+            <span class="text-white small text-center text-uppercase">Copyright &copy; Tom Hsu</span>
+         </div>
+      </footer>
       <script src="assets/javascript/game.js"></script>
    </body>
 </html>

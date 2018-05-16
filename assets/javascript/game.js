@@ -7,19 +7,19 @@ var guessesLeft = 9;
 
 // Functions that update wins, losses, guessesleft
 function updateWins() {
-    document.querySelector("#wins").innerHTML = "Wins: " + wins;
+    document.querySelector("#wins").innerHTML = "<b>Wins: </b>" + wins;
 }
 
 function updateLosses() {
-    document.querySelector("#losses").innerHTML = "Losses: " + losses;
+    document.querySelector("#losses").innerHTML = "<b>Losses: </b>" + losses;
 }
 
 function updateGuessesLeft() {
-    document.querySelector("#guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+    document.querySelector("#guessesLeft").innerHTML = "<b>Guesses Left: </b>" + guessesLeft;
 }
 
 function updateGuessedLetters() {
-    document.querySelector("#guessedLetters").innerHTML = "Your guesses so far: " + guessedLetters.join(', ');
+    document.querySelector("#guessedLetters").innerHTML = "<b>Your guesses so far: </b>" + guessedLetters.join(', ');
 }
 
 // Function for restarting the game
@@ -64,7 +64,7 @@ function renderLetter() {
             if (compRand == playRand) {
                 wins++;
                 updateWins();
-                document.getElementById("message").innerHTML = "Good job. You won!";
+                alert("Nice try... But you lost!");
                 renderLetter();
             }
 
@@ -72,7 +72,7 @@ function renderLetter() {
             if (guessesLeft == 0) {
                 losses++;
                 updateLosses();
-                document.getElementById("message").innerHTML = "Nice try... But you lost!";
+                alert("Nice try... But you lost!");
                 renderLetter();
                 restartGame();
             }
