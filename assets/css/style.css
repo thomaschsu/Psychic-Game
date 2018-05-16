@@ -1,15 +1,12 @@
 nav {
     background: #2196F3;
 }
-
 body {
     background-image: url("../images/background.jpeg");
 }
-
 .footer-fix {
     min-height: calc(85vh - 70px);
 }
-
 footer {
     border-top: 1px solid;
     border-top-color: #2196F3;

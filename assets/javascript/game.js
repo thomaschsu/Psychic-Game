@@ -19,7 +19,7 @@ function updateGuessesLeft() {
 }
 
 function updateGuessedLetters() {
-    document.querySelector("#guessedLetters").innerHTML = "<b>Your guesses so far: </b>" + guessedLetters.join(', ');
+    document.querySelector("#guessedLetters").innerHTML = "<b>Your guesses so far: <br></b>[ " + guessedLetters.join(', ') + ' ]';
 }
 
 // Function for restarting the game
@@ -52,20 +52,21 @@ function renderLetter() {
             (playRand === 'p') || (playRand === 'q') || (playRand === 'r') || (playRand === 's') || (playRand === 't') ||
             (playRand === 'u') || (playRand === 'v') || (playRand === 'w') || (playRand === 'x') || (playRand === 'y') ||
             (playRand === 'z')) {
-            
+
             // If letter is incorrect, push it to the empty array
             if (compRand != playRand) {
-                (guessesLeft-- && guessedLetters.push(playRand));
-                updateGuessesLeft();
+                (guessedLetters.push(playRand) && guessesLeft--);
                 updateGuessedLetters();
+                updateGuessesLeft();
             }
 
             // If letter is correct, mark as a win and restart
             if (compRand == playRand) {
                 wins++;
                 updateWins();
-                alert("Nice try... But you lost!");
+                alert("Good job! You got the correct letter! You're def a psychic.");
                 renderLetter();
+                restartGame();
             }
 
             // If player exhausts all guesses, mark as a loss and restart
