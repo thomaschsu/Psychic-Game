@@ -73,7 +73,7 @@ function renderLetter() {
             if (guessesLeft == 0) {
                 losses++;
                 updateLosses();
-                alert("Nice try... But you lost!");
+                alert("You lost! Nice try though.");
                 renderLetter();
                 restartGame();
             }
