@@ -22,9 +22,13 @@ function updateGuessedLetters() {
     document.querySelector("#guessedLetters").innerHTML = "Your guesses so far: " + guessedLetters + " ";
 }
 
+// Function for restarting the game
 function restartGame() {
     guessesLeft = 9;
     guessedLetters = [];
+    renderLetter();
+    updateGuessesLeft();
+    updateGuessedLetters();
 }
 
 renderLetter();
@@ -40,24 +44,25 @@ function renderLetter() {
 
     // Player chooses random letter
     document.onkeyup = function(event) {
-        var playRand = event.key;
+        var playRand = event.key.toLowerCase();
         console.log(playRand);
 
-        // If letter is wrong, mark down letter as previously guessed
+        // If player pushs a-z, game starts
         if ((playRand === 'a') || (playRand === 'b') || (playRand === 'c') || (playRand === 'd') || (playRand === 'e') ||
             (playRand === 'f') || (playRand === 'g') || (playRand === 'h') || (playRand === 'i') || (playRand === 'j') ||
             (playRand === 'k') || (playRand === 'l') || (playRand === 'm') || (playRand === 'n') || (playRand === 'o') ||
             (playRand === 'p') || (playRand === 'q') || (playRand === 'r') || (playRand === 's') || (playRand === 't') ||
             (playRand === 'u') || (playRand === 'v') || (playRand === 'w') || (playRand === 'x') || (playRand === 'y') ||
             (playRand === 'z')) {
-
+            
+            // If letter is incorrect, push it to the empty array
             if (compRand != playRand) {
                 (guessesLeft-- && guessedLetters.push(playRand));
                 updateGuessesLeft();
                 updateGuessedLetters();
             }
 
-            // If letter right, mark as a win and restart
+            // If letter is correct, mark as a win and restart
             if (compRand == playRand) {
                 wins++;
                 updateWins();
