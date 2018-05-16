@@ -61,6 +61,7 @@ function renderLetter() {
             if (compRand == playRand) {
                 wins++;
                 updateWins();
+                document.getElementById("message").innerHTML = "Good job. You won!";
                 renderLetter();
             }
 
@@ -68,7 +69,7 @@ function renderLetter() {
             if (guessesLeft == 0) {
                 losses++;
                 updateLosses();
-                alert("Welp. Nice try. Go at it again!");
+                document.getElementById("message").innerHTML = "Nice try... But you lost!";
                 renderLetter();
                 restartGame();
             }
