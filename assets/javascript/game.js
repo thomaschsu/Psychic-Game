@@ -1,11 +1,11 @@
 // Variables
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var guessedLetters = [];
 var wins = 0;
 var losses = 0;
+var guessedLetters = [];
 var guessesLeft = 9;
 
-// Functions that updates wins, losses, guessesleft
+// Functions that update wins, losses, guessesleft
 function updateWins() {
     document.querySelector("#wins").innerHTML = "Wins: " + wins;
 }
@@ -32,7 +32,6 @@ updateWins();
 updateLosses();
 updateGuessesLeft();
 updateGuessedLetters();
-restartGame();
 
 // Computer chooses random letter
 function renderLetter() {
@@ -69,6 +68,7 @@ function renderLetter() {
             if (guessesLeft == 0) {
                 losses++;
                 updateLosses();
+                alert("Welp. Nice try. Go at it again!");
                 renderLetter();
                 restartGame();
             }
