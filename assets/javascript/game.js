@@ -22,11 +22,17 @@ function updateGuessedLetters() {
     document.querySelector("#guessedLetters").innerHTML = "Your guesses so far: " + guessedLetters + " ";
 }
 
+function restartGame() {
+    guessesLeft = 9;
+    guessedLetters = [];
+}
+
 renderLetter();
 updateWins();
 updateLosses();
 updateGuessesLeft();
 updateGuessedLetters();
+restartGame();
 
 // Computer chooses random letter
 function renderLetter() {
@@ -34,7 +40,7 @@ function renderLetter() {
     console.log(compRand);
 
     // Player chooses random letter
-    window.onload = document.onkeyup = function(event) {
+    document.onkeyup = function(event) {
         var playRand = event.key;
         console.log(playRand);
 
@@ -56,15 +62,16 @@ function renderLetter() {
             if (compRand == playRand) {
                 wins++;
                 updateWins();
-                renderLetter()
+                renderLetter();
             }
 
             // If player exhausts all guesses, mark as a loss and restart
             if (guessesLeft == 0) {
                 losses++;
-                console.log(losses);
+                updateLosses();
+                renderLetter();
+                restartGame();
             }
-
 
         }
 
