@@ -64,7 +64,7 @@ function renderLetter() {
             if (compRand == playRand) {
                 wins++;
                 updateWins();
-                alert("Good job! You got the correct letter! You're def a psychic.");
+                alert("Good job! You got the correct letter! You're def a psychic. (Game will restart)");
                 renderLetter();
                 restartGame();
             }
@@ -73,11 +73,12 @@ function renderLetter() {
             if (guessesLeft == 0) {
                 losses++;
                 updateLosses();
-                alert("You lost! Nice try though.");
+                alert("You lost! Nice try though. (Game will restart)");
                 renderLetter();
                 restartGame();
             }
-
+        } else {
+            alert("Press a letter from A-Z");
         }
 
     }
