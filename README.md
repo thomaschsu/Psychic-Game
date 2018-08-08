@@ -1,7 +1,7 @@
 # Psychic Game
 
 ### Description
-This is a JavaScript game that requires the user to guess what letter the computer is thinking of. The user starts off with 9 guesses, if the user guesses the correct letter, an alert pops up saying you won. If not, an alert pops up saying you lost. Good luck.
+This is a JavaScript game that requires the user to guess what letter the computer is thinking of. The user starts off with 9 guesses, if the user guesses the correct letter, an alert pops up saying you won. If not, an alert pops up saying you lost. The computer also keeps track of how many wins and losses you have. Good luck.
 
 - - -
 
